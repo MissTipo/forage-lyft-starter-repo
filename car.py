@@ -1,5 +1,5 @@
 """Car class for the car service program."""
-from ..serviceable import Serviceable
+from serviceable import Serviceable
 
 
 class Car(Serviceable):

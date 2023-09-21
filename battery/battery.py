@@ -6,5 +6,5 @@ from ..serviceable import Serviceable
 
 class Battery(Serviceable):
     @abstractmethod
-    def need_service(self) -> bool:
+    def needs_service(self) -> bool:
         pass
