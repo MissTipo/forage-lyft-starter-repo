@@ -1,7 +1,6 @@
 """Abstract Factory Class."""
 
 from abc import ABC, abstractmethod
-from ..components.car import Car
 
 
 class CarFactory(ABC):
