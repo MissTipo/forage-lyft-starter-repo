@@ -1,15 +1,49 @@
 """Abstract Factory Class."""
-from engine.engine import Engine
-from battery.battery import Battery
+from battery.nubbin_battery import NubbinBattery
+from battery.spindler_battery import SpindlerBattery
+from car import Car
+from engine.capulet_engine import CapuletEngine
+from engine.sternman_engine import SternmanEngine
+from engine.willoughby_engine import WilloughbyEngine
 
 
-from abc import ABC, abstractmethod
+class CarFactory:
+    @staticmethod
+    def create_calliope(current_date, last_service_date, current_mileage, last_service_mileage):
+        """Create a Calliope car."""
+        engine = CapuletEngine(current_mileage, last_service_mileage)
+        battery = SpindlerBattery(current_date, last_service_date)
+        car = Car(engine, battery)
+        return car
 
+    @staticmethod
+    def create_glissade(current_date, last_service_date, current_mileage, last_service_mileage):
+        """Create a Glissade car."""
+        engine = WilloughbyEngine(current_mileage, last_service_mileage)
+        battery = SpindlerBattery(current_date, last_service_date)
+        car = Car(engine, battery)
+        return car
 
-class CarFactory(ABC):
-    """Abstract Factory Class."""
+    @staticmethod
+    def create_palindrome(current_date, last_service_date, warning_light_is_on):
+        """Create a Palindrome car."""
+        engine = SternmanEngine(warning_light_is_on)
+        battery = SpindlerBattery(current_date, last_service_date)
+        car = Car(engine, battery)
+        return car
 
-    @abstractmethod
-    def create_car(self, current_date, service_date, current_mileage, last_service_mileage):
-        """Abstract facrory method."""
-        pass
+    @staticmethod
+    def create_rorschach(current_date, last_service_date, current_mileage, last_service_mileage):
+        """Create a Rorschach car."""
+        engine = WilloughbyEngine(current_mileage, last_service_mileage)
+        battery = NubbinBattery(current_date, last_service_date)
+        car = Car(engine, battery)
+        return car
+
+    @staticmethod
+    def create_thovex(current_date, last_service_date, current_mileage, last_service_mileage):
+        """Create a Thovex car."""
+        engine = CapuletEngine(current_mileage, last_service_mileage)
+        battery = NubbinBattery(current_date, last_service_date)
+        car = Car(engine, battery)
+        return car
