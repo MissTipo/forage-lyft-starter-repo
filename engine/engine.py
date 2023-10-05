@@ -1,6 +1,6 @@
 """Absttract Class for Engine."""
 
-from ...serviceable import Serviceable
+from serviceable import Serviceable
 
 
 class Engine(Serviceable):
