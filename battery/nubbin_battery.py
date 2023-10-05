@@ -1,6 +1,6 @@
 """A class for the Nubbin battery."""
 
-from battery import Battery
+from battery.battery import Battery
 from datetime import date
 
 
@@ -13,4 +13,4 @@ class NubbinBattery(Battery):
         self.current_date = current_date
 
     def needs_service(self) -> bool:
-        return (self.current_date.year - self.last_service_date.year) >= 4
+        return (self.current_date.year - self.last_service_date.year) > 4

@@ -1,7 +1,7 @@
 """Class for battery."""
 
 from abc import abstractmethod
-from ..serviceable import Serviceable
+from serviceable import Serviceable
 
 
 class Battery(Serviceable):
